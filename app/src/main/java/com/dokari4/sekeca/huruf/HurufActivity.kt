@@ -1,4 +1,4 @@
-package com.dokari4.sekeca
+package com.dokari4.sekeca.huruf
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,11 +8,19 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dokari4.sekeca.ui.ViewModelfactory
+import com.dokari4.sekeca.data.local.Model
+import com.dokari4.sekeca.data.local.questionDatabase
 import com.dokari4.sekeca.databinding.ActivityHurufBinding
+import com.dokari4.sekeca.ui.HurufAdapter
+import com.dokari4.sekeca.utils.Helper
+import com.dokari4.sekeca.utils.QuestionClickHandler
 
 class HurufActivity : AppCompatActivity(), QuestionClickHandler {
     private lateinit var binding: ActivityHurufBinding
     private lateinit var hurufViewModel: HurufViewModel
+    private var questionAnswer: String? = null
+    private var question: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +45,9 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
     }
 
     override fun clickedQuestionItem(view: View, model: Model) {
-//        Toast.makeText(this, "Question: ${model.question}", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "Question: ${model.question} = $questionAnswer", Toast.LENGTH_SHORT).show()
         hurufViewModel.displaySpeechRecognizer()
+        question = model.question
     }
 
     //SpeechRecognizer
@@ -46,7 +55,8 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
         if (result.resultCode == RESULT_OK) {
             val textFromSpeech = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).let { it?.get(0) }
             if (textFromSpeech != null) {
-                Toast.makeText(this, "$textFromSpeech", Toast.LENGTH_SHORT).show()
+                questionAnswer = textFromSpeech
+                Toast.makeText(this, "$questionAnswer = $question similarities ${Helper.findSimilarity(questionAnswer, question)}", Toast.LENGTH_SHORT).show()
             }
         }
     }

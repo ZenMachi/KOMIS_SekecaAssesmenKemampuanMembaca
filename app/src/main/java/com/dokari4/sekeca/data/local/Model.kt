@@ -1,4 +1,4 @@
-package com.dokari4.sekeca
+package com.dokari4.sekeca.data.local
 
 data class Model(val question: String,)
 

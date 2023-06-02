@@ -1,8 +1,9 @@
-package com.dokari4.sekeca
+package com.dokari4.sekeca.ui
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.dokari4.sekeca.huruf.HurufViewModel
 import java.lang.IllegalArgumentException
 
 class ViewModelfactory private constructor(private val mApplication: Application) : ViewModelProvider.NewInstanceFactory() {

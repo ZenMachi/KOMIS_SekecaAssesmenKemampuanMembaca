@@ -1,4 +1,4 @@
-package com.dokari4.sekeca
+package com.dokari4.sekeca.huruf
 
 import android.app.Application
 import android.content.Intent

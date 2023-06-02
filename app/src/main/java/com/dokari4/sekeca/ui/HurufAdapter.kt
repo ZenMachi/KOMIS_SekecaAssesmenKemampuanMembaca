@@ -1,12 +1,12 @@
-package com.dokari4.sekeca
+package com.dokari4.sekeca.ui
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.dokari4.sekeca.data.local.Model
 import com.dokari4.sekeca.databinding.ItemRowBinding
+import com.dokari4.sekeca.utils.QuestionClickHandler
 
 class HurufAdapter(private val context: Context, private val data: ArrayList<Model>): RecyclerView.Adapter<HurufAdapter.MyHolder>() {
 
