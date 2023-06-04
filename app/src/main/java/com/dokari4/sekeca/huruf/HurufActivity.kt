@@ -3,18 +3,23 @@ package com.dokari4.sekeca.huruf
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.RecognizerIntent
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dokari4.sekeca.ui.ViewModelfactory
 import com.dokari4.sekeca.data.local.Model
+import com.dokari4.sekeca.data.local.ScoreEntity
 import com.dokari4.sekeca.data.local.questionDatabase
 import com.dokari4.sekeca.databinding.ActivityHurufBinding
 import com.dokari4.sekeca.ui.HurufAdapter
 import com.dokari4.sekeca.utils.Helper
 import com.dokari4.sekeca.utils.QuestionClickHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class HurufActivity : AppCompatActivity(), QuestionClickHandler {
     private lateinit var binding: ActivityHurufBinding
@@ -42,6 +47,8 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
 
         hurufViewModel.initialTextSpeech(speechToText)
 
+        getTotalScore()
+
     }
 
     override fun clickedQuestionItem(view: View, model: Model) {
@@ -56,9 +63,24 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
             val textFromSpeech = result.data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).let { it?.get(0) }
             if (textFromSpeech != null) {
                 questionAnswer = textFromSpeech
+                insertScore(Helper.findSimilarity(questionAnswer, question))
                 Toast.makeText(this, "$questionAnswer = $question similarities ${Helper.findSimilarity(questionAnswer, question)}", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun getTotalScore() {
+        binding.btnNext.setOnClickListener {
+            hurufViewModel.getTotalScore.observe(this, {
+                Helper.createToast(this, it.toString())
+            })
+
+        }
+//        hurufViewModel.getTotalScore().o
+    }
+
+    private fun insertScore(score: Double) {
+        hurufViewModel.insertScore(ScoreEntity(score = score))
     }
 
 

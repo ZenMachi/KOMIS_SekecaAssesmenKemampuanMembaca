@@ -1,5 +1,7 @@
 package com.dokari4.sekeca.utils
 
+import android.content.Context
+import android.widget.Toast
 import kotlin.math.max
 import kotlin.math.min
 
@@ -32,5 +34,9 @@ object Helper {
         return if (maxLength > 0) {
             (maxLength * 1.0 - getLevenshteinDistance(x, y)) / maxLength * 1.0
         } else 1.0
+    }
+
+    fun createToast(context: Context, msg: String) {
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
 }
