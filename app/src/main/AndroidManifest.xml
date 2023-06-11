@@ -22,7 +22,7 @@
             android:name=".SukuActivity"
             android:exported="false" />
         <activity
-            android:name=".HurufActivity"
+            android:name=".huruf.HurufActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
