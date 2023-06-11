@@ -13,10 +13,11 @@ import com.dokari4.sekeca.ui.HurufAdapter
 import com.dokari4.sekeca.ui.ViewModelfactory
 import com.dokari4.sekeca.utils.Helper
 import com.dokari4.sekeca.utils.QuestionClickHandler
+import com.dokari4.sekeca.viewmodels.ViewModel
 
 class HurufActivity : AppCompatActivity(), QuestionClickHandler {
     private lateinit var binding: ActivityHurufBinding
-    private lateinit var hurufViewModel: HurufViewModel
+    private lateinit var viewmodel: ViewModel
     private var questionAnswer: String? = null
     private var question: String? = null
     private var category: String? = null
@@ -30,14 +31,14 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
 
         //ViewModels
         val factory = ViewModelfactory.getInstance(application)
-        hurufViewModel = ViewModelProvider(this, factory)[HurufViewModel::class.java]
-        hurufViewModel.initialTextSpeech(speechToText)
+        viewmodel = ViewModelProvider(this, factory)[ViewModel::class.java]
+        viewmodel.initialTextSpeech(speechToText)
 
         //Adapter
         val adapter = HurufAdapter()
 
         //Fill Data to Adapter
-        hurufViewModel.getHurufQuestion.observe(this) {
+        viewmodel.getHurufQuestion.observe(this) {
             adapter.submitList(it)
         }
 
@@ -52,13 +53,13 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
 
         getTotalScore()
         binding.btnBack.setOnClickListener {
-            finish()
+            viewmodel.resetScore()
+            Helper.createToast(this, "Score Reseted")
         }
     }
 
     override fun clickedQuestionItem(view: View, model: Model) {
-//        Toast.makeText(this, "Question: ${model.question} = $questionAnswer", Toast.LENGTH_SHORT).show()
-        hurufViewModel.displaySpeechRecognizer()
+        viewmodel.displaySpeechRecognizer()
         question = model.question
         id = model.id
         category = model.category
@@ -80,7 +81,7 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
 
     private fun getTotalScore() {
         binding.btnNext.setOnClickListener {
-            hurufViewModel.getTotalScore.observe(this) {
+            viewmodel.getTotalScore.observe(this) {
                 Helper.createToast(this, it.toString())
             }
 
@@ -88,7 +89,7 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
     }
 
     private fun updateData(model: Model) {
-        hurufViewModel.updateData(model)
+        viewmodel.updateData(model)
     }
 
 

@@ -1,9 +1,7 @@
 package com.dokari4.sekeca.ui
 
 import android.app.Application
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dokari4.sekeca.huruf.HurufViewModel
 
 class ViewModelfactory constructor(private val mApplication: Application) : ViewModelProvider.NewInstanceFactory() {
     companion object {
@@ -22,9 +20,9 @@ class ViewModelfactory constructor(private val mApplication: Application) : View
     }
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HurufViewModel::class.java)) {
-            return HurufViewModel(mApplication) as T
+    override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(com.dokari4.sekeca.viewmodels.ViewModel::class.java)) {
+            return com.dokari4.sekeca.viewmodels.ViewModel(mApplication) as T
         }
         throw IllegalArgumentException("Unknown Viewmodel Class: ${modelClass.name}")
     }

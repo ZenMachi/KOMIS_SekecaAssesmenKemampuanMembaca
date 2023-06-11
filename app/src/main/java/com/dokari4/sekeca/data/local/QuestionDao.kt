@@ -15,6 +15,9 @@ interface QuestionDao {
     @Update
     suspend fun updateData(model: Model)
 
+    @Query("update `database` set score = null")
+    suspend fun resetScore()
+
     @Query("SELECT SUM(score) FROM `database`")
     fun getTotalScore(): LiveData<Double>
 
