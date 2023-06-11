@@ -1,26 +1,398 @@
 [
   {
-    "category":"Huruf",
-    "question":"a"
+    "category": "Huruf",
+    "question": "O"
   },
   {
-    "category":"Huruf",
-    "question":"j"
+    "category": "Huruf",
+    "question": "J"
   },
   {
-    "category":"Huruf",
-    "question":"c"
+    "category": "Huruf",
+    "question": "W"
   },
   {
-    "category":"Huruf",
-    "question":"w"
+    "category": "Huruf",
+    "question": "M"
   },
   {
-    "category":"Huruf",
-    "question":"w"
+    "category": "Huruf",
+    "question": "a"
   },
   {
-    "category":"Huruf",
-    "question":"a"
+    "category": "Huruf",
+    "question": "P"
+  },
+  {
+    "category": "Huruf",
+    "question": "i"
+  },
+  {
+    "category": "Huruf",
+    "question": "h"
+  },
+  {
+    "category": "Huruf",
+    "question": "L"
+  },
+  {
+    "category": "Huruf",
+    "question": "u"
+  },
+  {
+    "category": "Huruf",
+    "question": "K"
+  },
+  {
+    "category": "Huruf",
+    "question": "d"
+  },
+  {
+    "category": "Huruf",
+    "question": "a"
+  },
+  {
+    "category": "Huruf",
+    "question": "P"
+  },
+  {
+    "category": "Huruf",
+    "question": "u"
+  },
+  {
+    "category": "Huruf",
+    "question": "B"
+  },
+  {
+    "category": "Huruf",
+    "question": "o"
+  },
+  {
+    "category": "Huruf",
+    "question": "Y"
+  },
+  {
+    "category": "Huruf",
+    "question": "A"
+  },
+  {
+    "category": "Huruf",
+    "question": "n"
+  },
+  {
+    "category": "Huruf",
+    "question": "w"
+  },
+  {
+    "category": "Huruf",
+    "question": "C"
+  },
+  {
+    "category": "Huruf",
+    "question": "h"
+  },
+  {
+    "category": "Huruf",
+    "question": "i"
+  },
+  {
+    "category": "Huruf",
+    "question": "V"
+  },
+  {
+    "category": "Huruf",
+    "question": "d"
+  },
+  {
+    "category": "Huruf",
+    "question": "i"
+  },
+  {
+    "category": "Huruf",
+    "question": "F"
+  },
+  {
+    "category": "Huruf",
+    "question": "M"
+  },
+  {
+    "category": "Huruf",
+    "question": "G"
+  },
+  {
+    "category": "Huruf",
+    "question": "i"
+  },
+  {
+    "category": "Huruf",
+    "question": "b"
+  },
+  {
+    "category": "Huruf",
+    "question": "R"
+  },
+  {
+    "category": "Huruf",
+    "question": "A"
+  },
+  {
+    "category": "Huruf",
+    "question": "e"
+  },
+  {
+    "category": "Huruf",
+    "question": "X"
+  },
+  {
+    "category": "Huruf",
+    "question": "j"
+  },
+  {
+    "category": "Huruf",
+    "question": "M"
+  },
+  {
+    "category": "Huruf",
+    "question": "E"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "da"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ke"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "mu"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "an"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "yi"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ja"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ci"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "man"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "pu"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "it"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "do"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "os"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ak"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "la"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "wa"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ya"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "bi"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ed"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ca"
+  },
+  {
+    "category": "Suku Kata",
+    "question": "ta"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Meja"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Lidah"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Halus"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Dasar"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Kotak"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Pagi"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Kaca"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Pohon"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Mandi"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Pasar"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Kue"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Puncak"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Guru"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Bukit"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Marah"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Kursi"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Bulan"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Sekolah"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Awan"
+  },
+  {
+    "category": "Kata Bermakna",
+    "question": "Buku"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Ata"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Kem"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Upa"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Idar"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Namdu"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Riha"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Gudi"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Rijan"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Wejab"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Pisa"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Uba"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Sifo"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Jabu"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Cano"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Kuso"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Mida"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Sur"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Kamsi"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Gase"
+  },
+  {
+    "category": "Kata Tidak Bermakna",
+    "question": "Nitu"
   }
 ]

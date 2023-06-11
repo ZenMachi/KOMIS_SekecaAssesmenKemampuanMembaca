@@ -1,4 +1,4 @@
-package com.dokari4.sekeca.huruf
+package com.dokari4.sekeca.viewmodels
 
 import android.app.Application
 import android.content.Intent
@@ -12,7 +12,7 @@ import com.dokari4.sekeca.data.local.Model
 import kotlinx.coroutines.launch
 import java.util.Locale
 
-class HurufViewModel(application: Application) : ViewModel() {
+class ViewModel(application: Application) : ViewModel() {
     private lateinit var textToSpeechEngine: TextToSpeech
     private lateinit var startForResult: ActivityResultLauncher<Intent>
 
@@ -22,9 +22,16 @@ class HurufViewModel(application: Application) : ViewModel() {
     fun updateData(model: Model) {
         mQuestionRepository.updateData(model)
     }
+    fun resetScore() {
+        mQuestionRepository.resetScore()
+    }
 
     val getHurufQuestion = mQuestionRepository.getHurufQuestion()
+    val getSukuKataQuestion = mQuestionRepository.getSukuKataQuestion()
+    val getKataBermaknaQuestion = mQuestionRepository.getKataBermaknaQuestion()
+    val getKataTidakBermaknaQuestion = mQuestionRepository.getKataTidakBermaknaQuestion()
     val getTotalScore = mQuestionRepository.getTotalScore()
+
 
     fun initialTextSpeech(speechToTextLauncher: ActivityResultLauncher<Intent>) =
         viewModelScope.launch {

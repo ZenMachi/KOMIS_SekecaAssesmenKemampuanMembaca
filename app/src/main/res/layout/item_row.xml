@@ -21,6 +21,7 @@
             android:id="@+id/tvQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="24sp"
             android:padding="8dp"
             android:textColor="@color/md_theme_light_onSecondaryContainer"
             android:text="Dolore perpetua sententiae vim porro intellegat vitae tempor lobortis vivamus. Errem dictum disputationi instructior pertinacia dictumst mazim dicam efficitur sem. Pellentesque enim mediocritatem reprimique dicta unum veri falli menandri."/>

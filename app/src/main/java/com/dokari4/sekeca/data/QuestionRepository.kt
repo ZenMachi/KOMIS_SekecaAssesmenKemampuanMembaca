@@ -28,8 +28,14 @@ class QuestionRepository(application: Application) {
         }
     }
 
+    fun resetScore() {
+        CoroutineScope(Dispatchers.IO).launch {
+            mQuestionDao.resetScore()
+        }
+    }
+
     fun getHurufQuestion(): LiveData<MutableList<Model>> = mQuestionDao.getQuestionCategory("Huruf")
     fun getSukuKataQuestion(): LiveData<MutableList<Model>> = mQuestionDao.getQuestionCategory("Suku Kata")
-    fun getKataBermakna(): LiveData<MutableList<Model>> = mQuestionDao.getQuestionCategory("Kata Bermakna")
-    fun getKataTidakBermakna(): LiveData<MutableList<Model>> = mQuestionDao.getQuestionCategory("Kata Tidak Bermakna")
+    fun getKataBermaknaQuestion(): LiveData<MutableList<Model>> = mQuestionDao.getQuestionCategory("Kata Bermakna")
+    fun getKataTidakBermaknaQuestion(): LiveData<MutableList<Model>> = mQuestionDao.getQuestionCategory("Kata Tidak Bermakna")
 }
