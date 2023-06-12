@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".huruf.HurufActivity">
+    android:background="#95FFEF"
+    tools:context=".view.huruf.HurufActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerView"
@@ -18,26 +19,42 @@
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:background="@color/md_theme_light_background"
+            android:backgroundTint="#95FFEF"
             android:src="@drawable/baseline_arrow_back_24"
-            android:contentDescription="Kembali"
+            android:contentDescription="@string/str_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/baseline_image_24"
+            android:id="@+id/imgSekeca"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/img_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/str_logo" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.3"
+            android:text="@string/str_title_app"
+            android:textColor="#954D2A"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imgSekeca"
+            app:layout_constraintStart_toStartOf="@+id/imgSekeca"
+            app:layout_constraintTop_toBottomOf="@id/imgSekeca" />
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Soal"
+            android:text="@string/str_title"
             android:textStyle="bold"
             android:textSize="36sp"
             app:layout_constraintTop_toBottomOf="@id/guideTop"
@@ -47,7 +64,7 @@
             android:id="@+id/tvSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Assesmen Kemampuan Membaca"
+            android:text="@string/str_subtitle1"
             android:textStyle="bold"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
@@ -58,12 +75,22 @@
             android:id="@+id/tvSubtitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Permulaan"
+            android:text="@string/str_subtitle2"
             android:textStyle="bold"
             android:textSize="24sp"
             app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imgChild1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/img_child1"
+            android:layout_marginStart="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/str_image_child" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -71,8 +98,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
             tools:listitem="@layout/item_row"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/imgChild1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvSubtitle2" />
@@ -83,7 +111,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Lanjut"/>
+            android:text="@string/str_next"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideTop"
