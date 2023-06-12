@@ -29,7 +29,7 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
         binding = ActivityHurufBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //ViewModels
+        //ViewModelss
         val factory = ViewModelfactory.getInstance(application)
         viewmodel = ViewModelProvider(this, factory)[ViewModel::class.java]
         viewmodel.initialTextSpeech(speechToText)
