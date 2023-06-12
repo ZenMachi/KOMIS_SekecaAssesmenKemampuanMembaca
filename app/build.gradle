@@ -67,4 +67,6 @@ dependencies {
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.4.2"
 
+    //Ticker Animation Lib
+    implementation 'com.robinhood.ticker:ticker:2.0.4'
 }

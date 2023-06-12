@@ -1,4 +1,4 @@
-package com.dokari4.sekeca.huruf
+package com.dokari4.sekeca.view.huruf
 
 import android.os.Bundle
 import android.speech.RecognizerIntent
@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dokari4.sekeca.data.local.Model
 import com.dokari4.sekeca.databinding.ActivityHurufBinding
-import com.dokari4.sekeca.ui.HurufAdapter
+import com.dokari4.sekeca.ui.RecyclerViewAdapter
 import com.dokari4.sekeca.ui.ViewModelfactory
 import com.dokari4.sekeca.utils.Helper
 import com.dokari4.sekeca.utils.QuestionClickHandler
@@ -35,7 +35,7 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
         viewmodel.initialTextSpeech(speechToText)
 
         //Adapter
-        val adapter = HurufAdapter()
+        val adapter = RecyclerViewAdapter()
 
         //Fill Data to Adapter
         viewmodel.getHurufQuestion.observe(this) {

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">KOMIS_Sekeca Assesmen Kemampuan Membaca</string>
+    <string name="str_subtitle1">Asesmen Kemampuan Membaca</string>
+    <string name="str_back">Kembali</string>
+    <string name="str_logo">Logo Sekeca</string>
+    <string name="str_title_app">SEKECA</string>
+    <string name="str_title">Soal</string>
+    <string name="str_subtitle2">Permulaan</string>
+    <string name="str_image_child">Gambar Anak Anak</string>
+    <string name="str_next">Lanjutkan</string>
+    <string name="str_go">Masuk</string>
+    <string name="str_reset">Reset Score</string>
 </resources>
