@@ -1,6 +1,5 @@
 package com.dokari4.sekeca.view.huruf
 
-import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.view.View
@@ -14,7 +13,6 @@ import com.dokari4.sekeca.ui.RecyclerViewAdapter
 import com.dokari4.sekeca.ui.ViewModelfactory
 import com.dokari4.sekeca.utils.Helper
 import com.dokari4.sekeca.utils.QuestionClickHandler
-import com.dokari4.sekeca.view.suku.SukuActivity
 import com.dokari4.sekeca.viewmodels.ViewModel
 
 class HurufActivity : AppCompatActivity(), QuestionClickHandler {
@@ -53,13 +51,10 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
             this.adapter = adapter
         }
 
+        getTotalScore()
         binding.btnBack.setOnClickListener {
-            finish()
-        }
-
-        binding.btnNext.setOnClickListener {
-            val intent = Intent(this, SukuActivity::class.java)
-            startActivity(intent)
+            viewmodel.resetScore()
+            Helper.createToast(this, "Score Reseted")
         }
     }
 
@@ -79,12 +74,23 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
                 val score = Helper.findSimilarity(questionAnswer!!.lowercase(), question!!.lowercase())
                 val data = Model(id!!, question!!, answer = questionAnswer, category = category!!, score = score)
                 updateData(data)
+                Helper.createToast(this, "$questionAnswer = $question similarities $score")
             }
+        }
+    }
+
+    private fun getTotalScore() {
+        binding.btnNext.setOnClickListener {
+            viewmodel.getTotalScore.observe(this) {
+                Helper.createToast(this, it.toString())
+            }
+
         }
     }
 
     private fun updateData(model: Model) {
         viewmodel.updateData(model)
     }
+
 
 }
