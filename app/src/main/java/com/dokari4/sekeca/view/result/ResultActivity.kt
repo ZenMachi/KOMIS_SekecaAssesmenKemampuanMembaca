@@ -40,6 +40,10 @@ class ResultActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         binding.btnReset.setOnClickListener {
             viewModel.resetScore()
         }

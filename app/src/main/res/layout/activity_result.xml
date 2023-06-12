@@ -7,11 +7,33 @@
     android:background="#95FFEF"
     tools:context=".view.result.ResultActivity">
 
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"
+        android:background="@color/md_theme_light_background"
+        android:backgroundTint="#95FFEF"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:contentDescription="@string/str_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_score"
+        android:textSize="48sp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tickerView"/>
+
     <com.robinhood.ticker.TickerView
         android:id="@+id/tickerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="64sp"
         android:textColor="@color/md_theme_dark_inverseOnSurface"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
