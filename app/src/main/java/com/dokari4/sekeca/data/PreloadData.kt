@@ -7,7 +7,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.dokari4.sekeca.R
 import com.dokari4.sekeca.data.local.Model
 import com.dokari4.sekeca.data.local.QuestionDatabase
-import com.google.gson.JsonArray
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +24,7 @@ class PreloadData(private val context: Context): RoomDatabase.Callback() {
 
     private suspend fun fillWithStartingData(context: Context) {
         //obtaining instance of data access object
-        val dao = QuestionDatabase.getInstance(context)?.dao
+        val dao = QuestionDatabase.getInstance(context).dao
 
         // using try catch to load the necessary data
         try {
@@ -62,7 +61,7 @@ class PreloadData(private val context: Context): RoomDatabase.Callback() {
     }
 
     //Load JSON Array
-    private fun loadJSONArray(context: Context): JSONArray? {
+    private fun loadJSONArray(context: Context): JSONArray {
         //obtain input byte
         val inputStream = context.resources.openRawResource(R.raw.question)
         //using Buffered reader to read the inputstream byte

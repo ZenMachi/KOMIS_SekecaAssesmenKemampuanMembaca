@@ -9,7 +9,7 @@ import com.dokari4.sekeca.data.local.Model
 import com.dokari4.sekeca.databinding.ItemRowBinding
 import com.dokari4.sekeca.utils.QuestionClickHandler
 
-class RecyclerViewAdapter(): ListAdapter<Model,RecyclerViewAdapter.MyHolder>(DiffutilCallBack) {
+class RecyclerViewAdapter : ListAdapter<Model,RecyclerViewAdapter.MyHolder>(DiffutilCallBack) {
 
     var handler: QuestionClickHandler? = null
 
