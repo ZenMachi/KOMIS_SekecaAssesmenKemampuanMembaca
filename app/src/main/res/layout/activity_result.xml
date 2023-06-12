@@ -11,7 +11,7 @@
         android:id="@+id/tickerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="64sp"
+        android:textSize="24sp"
         android:textColor="@color/md_theme_dark_inverseOnSurface"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
