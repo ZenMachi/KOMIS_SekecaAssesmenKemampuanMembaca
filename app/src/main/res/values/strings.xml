@@ -11,4 +11,21 @@
     <string name="str_go">Masuk</string>
     <string name="str_reset">Reset Score</string>
     <string name="str_score">Skor Anda</string>
+    <string name="str_start_again">Mulai Lagi</string>
+    <string name="str_list_user">List User</string>
+    <string name="str_biodata_siswa">Biodata Siswa</string>
+    <string name="str_nama">Nama</string>
+    <string name="str_kelas">Kelas</string>
+    <string name="str_sekolah">Sekolah</string>
+    <string name="str_provinsi">Provinsi</string>
+    <string name="str_kab_kota">Kab/Kota</string>
+    <string name="str_cancel">Cancel</string>
+    <string-array name="kelas">
+        <item>Kelas 1</item>
+        <item>Kelas 2</item>
+        <item>Kelas 3</item>
+        <item>Kelas 4</item>
+        <item>Kelas 5</item>
+        <item>Kelas 6</item>
+    </string-array>
 </resources>

@@ -31,6 +31,8 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
         binding = ActivityHurufBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val intentName = intent.getStringExtra("name").toString()
+
         //ViewModelss
         val factory = ViewModelfactory.getInstance(application)
         viewmodel = ViewModelProvider(this, factory)[ViewModel::class.java]
@@ -59,6 +61,7 @@ class HurufActivity : AppCompatActivity(), QuestionClickHandler {
 
         binding.btnNext.setOnClickListener {
             val intent = Intent(this, SukuActivity::class.java)
+            intent.putExtra("name", intentName)
             startActivity(intent)
         }
     }

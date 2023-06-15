@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.dokari4.sekeca.data.PreloadData
 
-@Database(entities = [Model::class], version = 1)
+@Database(entities = [Model::class, User::class], version = 1)
 abstract class QuestionDatabase : RoomDatabase() {
     abstract val dao: QuestionDao
 

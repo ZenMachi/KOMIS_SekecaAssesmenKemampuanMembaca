@@ -1,9 +1,12 @@
 package com.dokari4.sekeca.view.result
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.dokari4.sekeca.MainActivity
+import com.dokari4.sekeca.view.userlist.UserListActivity
 import com.dokari4.sekeca.databinding.ActivityResultBinding
 import com.dokari4.sekeca.ui.ViewModelfactory
 import com.dokari4.sekeca.viewmodels.ViewModel
@@ -20,6 +23,8 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val intentName = intent.getStringExtra("name").toString()
+
         //TickerView
         binding.tickerView.setCharacterLists(TickerUtils.provideNumberList())
         binding.tickerView.animationDuration = 1000
@@ -35,6 +40,7 @@ class ResultActivity : AppCompatActivity() {
                 val bd = BigDecimal(it)
                 val roundedScore = bd.setScale(2, RoundingMode.FLOOR)
                 binding.tickerView.setText(roundedScore.toString(), true)
+                viewModel.updateUserScore(nama = intentName, score = roundedScore.toDouble())
             } else {
                 binding.tickerView.setText("000", true)
             }
@@ -45,7 +51,15 @@ class ResultActivity : AppCompatActivity() {
         }
 
         binding.btnReset.setOnClickListener {
-            viewModel.resetScore()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
+
+        binding.btnUserList.setOnClickListener {
+            val intent = Intent(this, UserListActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -2,6 +2,8 @@ package com.dokari4.sekeca.utils
 
 import android.content.Context
 import android.widget.Toast
+import org.json.JSONArray
+import java.io.BufferedReader
 import kotlin.math.max
 import kotlin.math.min
 
@@ -38,5 +40,15 @@ object Helper {
 
     fun createToast(context: Context, msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    //Load JSON Array
+    fun loadJSONArray(context: Context, resource: Int): JSONArray {
+        //obtain input byte
+        val inputStream = context.resources.openRawResource(resource)
+        //using Buffered reader to read the inputstream byte
+        BufferedReader(inputStream.reader()).use {
+            return JSONArray(it.readText())
+        }
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#95FFEF"
+    android:background="@color/user_bg"
     tools:context=".view.result.ResultActivity">
 
     <ImageButton
@@ -13,10 +13,21 @@
         android:layout_height="64dp"
         android:layout_margin="16dp"
         android:background="@color/md_theme_light_background"
-        android:backgroundTint="#95FFEF"
+        android:backgroundTint="@color/user_bg"
         android:src="@drawable/baseline_arrow_back_24"
         android:contentDescription="@string/str_back"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnUserList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/md_theme_light_background"
+        android:src="@drawable/baseline_bookmarks_24"
+        android:contentDescription="@string/str_list_user"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -55,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/str_reset"
+        android:text="@string/str_start_again"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

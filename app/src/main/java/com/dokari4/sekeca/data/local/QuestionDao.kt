@@ -10,13 +10,22 @@ import androidx.room.Update
 interface QuestionDao {
 
     @Insert
+    suspend fun insertUser(user: User)
+
+    @Query("update user set scoreTotal = :score where nama = :nama")
+    suspend fun updateUserScore(nama: String, score: Double)
+
+    @Query("select * from user")
+    fun getUser(): LiveData<MutableList<User>>
+
+    @Insert
     suspend fun insertData(model: Model)
 
     @Update
     suspend fun updateData(model: Model)
 
-    @Query("update `database` set score = null")
-    suspend fun resetScore()
+    @Query("update `database` set score = null, answer = null")
+    suspend fun resetScoreAndAnswer()
 
     @Query("SELECT SUM(score) FROM `database`")
     fun getTotalScore(): LiveData<Double>

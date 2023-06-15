@@ -31,6 +31,8 @@ class TidakBermaknaActivity : AppCompatActivity(), QuestionClickHandler {
         binding = ActivityTidakBermaknaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val intentName = intent.getStringExtra("name").toString()
+
         //ViewModelss
         val factory = ViewModelfactory.getInstance(application)
         viewmodel = ViewModelProvider(this, factory)[ViewModel::class.java]
@@ -59,6 +61,7 @@ class TidakBermaknaActivity : AppCompatActivity(), QuestionClickHandler {
 
         binding.btnNext.setOnClickListener {
             val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("name", intentName)
             startActivity(intent)
         }
     }

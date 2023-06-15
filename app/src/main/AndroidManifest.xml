@@ -13,6 +13,12 @@
         android:theme="@style/Theme.KOMIS_SekecaAssesmenKemampuanMembaca"
         tools:targetApi="31">
         <activity
+            android:name=".view.userlist.UserListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.register.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.result.ResultActivity"
             android:exported="false" />
         <activity
