@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dokari4.sekeca.data.QuestionRepository
 import com.dokari4.sekeca.data.local.Model
+import com.dokari4.sekeca.data.local.User
 import kotlinx.coroutines.launch
 import java.util.Locale
 
@@ -19,13 +20,22 @@ class ViewModel(application: Application) : ViewModel() {
     private val mQuestionRepository: QuestionRepository = QuestionRepository(application)
 
 
+    fun insertUser(user: User) {
+        mQuestionRepository.insertUser(user)
+    }
+
+    fun updateUserScore(nama: String, score: Double) {
+        mQuestionRepository.updateUserScore(score, nama)
+    }
+
     fun updateData(model: Model) {
         mQuestionRepository.updateData(model)
     }
-    fun resetScore() {
-        mQuestionRepository.resetScore()
+    fun resetScoreAndAnswer() {
+        mQuestionRepository.resetScoreAndAnswer()
     }
 
+    val getUser = mQuestionRepository.getUser()
     val getHurufQuestion = mQuestionRepository.getHurufQuestion()
     val getSukuKataQuestion = mQuestionRepository.getSukuKataQuestion()
     val getKataBermaknaQuestion = mQuestionRepository.getKataBermaknaQuestion()

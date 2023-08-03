@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import com.dokari4.sekeca.data.local.Model
 import com.dokari4.sekeca.data.local.QuestionDao
 import com.dokari4.sekeca.data.local.QuestionDatabase
+import com.dokari4.sekeca.data.local.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,6 +21,20 @@ class QuestionRepository(application: Application) {
         mQuestionDao = db.dao
     }
 
+    fun insertUser(user: User) {
+        CoroutineScope(Dispatchers.IO).launch {
+            mQuestionDao.insertUser(user)
+        }
+    }
+
+    fun updateUserScore(score: Double, nama: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            mQuestionDao.updateUserScore(nama, score)
+        }
+    }
+
+    fun getUser(): LiveData<MutableList<User>> = mQuestionDao.getUser()
+
     fun getTotalScore(): LiveData<Double> = mQuestionDao.getTotalScore()
 
     fun updateData(model: Model) {
@@ -28,9 +43,9 @@ class QuestionRepository(application: Application) {
         }
     }
 
-    fun resetScore() {
+    fun resetScoreAndAnswer() {
         CoroutineScope(Dispatchers.IO).launch {
-            mQuestionDao.resetScore()
+            mQuestionDao.resetScoreAndAnswer()
         }
     }
 

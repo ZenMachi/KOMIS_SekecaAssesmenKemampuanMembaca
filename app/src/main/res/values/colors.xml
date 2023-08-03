@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
 
 <!--    User Defined Palletes-->
+    <color name="user_bg">#96FBD3</color>
 <!--    Realtime Colors-->
     <color name="rlt_background">#e3f2e3</color>
     <color name="rlt_text">#020302</color>

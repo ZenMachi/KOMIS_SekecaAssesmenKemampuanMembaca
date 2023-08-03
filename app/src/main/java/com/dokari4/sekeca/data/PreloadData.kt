@@ -7,12 +7,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.dokari4.sekeca.R
 import com.dokari4.sekeca.data.local.Model
 import com.dokari4.sekeca.data.local.QuestionDatabase
+import com.dokari4.sekeca.utils.Helper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.json.JSONArray
 import org.json.JSONException
-import java.io.BufferedReader
 
 class PreloadData(private val context: Context): RoomDatabase.Callback() {
     override fun onCreate(db: SupportSQLiteDatabase) {
@@ -29,7 +28,7 @@ class PreloadData(private val context: Context): RoomDatabase.Callback() {
         // using try catch to load the necessary data
         try {
             //creating variable that holds the loaded data
-            val data = loadJSONArray(context)
+            val data = Helper.loadJSONArray(context, R.raw.question)
             if (data != null){
                 //looping through the variable as specified fields are loaded with data
                 for (i in 0 until data.length()){
@@ -60,13 +59,4 @@ class PreloadData(private val context: Context): RoomDatabase.Callback() {
         }
     }
 
-    //Load JSON Array
-    private fun loadJSONArray(context: Context): JSONArray {
-        //obtain input byte
-        val inputStream = context.resources.openRawResource(R.raw.question)
-        //using Buffered reader to read the inputstream byte
-        BufferedReader(inputStream.reader()).use {
-            return JSONArray(it.readText())
-        }
-    }
 }
